@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 10px;
+  column-gap: 10px;
+
+  margin: 2% 2% 0 2%;
+
+  .broadcaster, .subscriber {
+    flex-grow: 1;
+    width: 300px;
+    min-width: 200px;
+    height: 300px;
+
+    border: medium dashed orange;
+    padding: 10px
+  }
+
+  .broadcaster {
+    border-color: blue;
+  }
+}
+
+.btn {
+  border-radius: 1rem;
+  border: none;
+  padding: 10px;
+  background-color: #008CBA;
+  cursor: pointer;
+}
+
