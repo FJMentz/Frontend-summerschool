@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AsyncSubject, BehaviorSubject, ReplaySubject, Subject, Subscription} from 'rxjs';
+import {Subject, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-subjects',
@@ -15,49 +15,52 @@ export class SubjectsComponent {
   input = '';
 
   // Subscribers
-  private subA: Subscription;
-  private subB: Subscription;
-  private subC: Subscription;
+  private subA!: Subscription;
+  private subB!: Subscription;
 
   // Broadcaster
-  private $subject: Subject<any>;
+  private subject$!: Subject<any>;
 
   constructor() {
-    this.$subject = new Subject();
-    // this.$subject = new AsyncSubject();
-    // this.$subject = new BehaviorSubject('Hello!');
-    // this.$subject = new ReplaySubject(3);
+    this.subject$ = new Subject();
+    // this.subject$ = new AsyncSubject();
+    // this.subject$ = new BehaviorSubject('Hello!');
+    // this.subject$ = new ReplaySubject(3);
   }
 
   // --------------- BROADCASTER -----------------
 
   send() {
-    this.$subject.next(this.input);
+    this.subject$.next(this.input);
     console.log(`${this.input} sent`);
   }
 
   complete() {
-    this.$subject.complete();
+    this.subject$.complete();
   }
 
   // --------------- SUBSCRIBERS -----------------
   subscribeA() {
     this.listA.push('I subscribed!');
-    this.subA = this.$subject.subscribe(x => {
+    this.subA = this.subject$.subscribe(x => {
       this.listA.push(x);
     });
   }
 
+  unsubscribeA() {
+    this.subA.unsubscribe();
+  }
+
   subscribeB() {
     this.listB.push('I subscribed!');
-    this.subB = this.$subject.subscribe(x => {
+    this.subB = this.subject$.subscribe(x => {
       this.listB.push(x);
     });
   }
 
   subscribeC() {
     this.listC.push('I subscribed!');
-    this.subC = this.$subject.subscribe(x => {
+    this.subject$.subscribe(x => {
       this.listC.push(x);
     });
   }
