@@ -5,7 +5,7 @@
   <div class="subscriber">
     <h3>Subscriber A</h3>
     <button type="button" class="btn" (click)="subscribeA()">Subscribe</button>
-    <!--    <button type="button" class="btn" (click)="unsubscribeA()">Unsubscribe</button>-->
+        <button type="button" class="btn" (click)="unsubscribeA()">Unsubscribe</button>
     <app-logger [list]="listA"></app-logger>
   </div>
 
@@ -23,7 +23,7 @@
 
   <div class="broadcaster">
     <h3>Broadcaster</h3>
-    <input type="text" [(ngModel)]="input">
+    <input type="text" [(ngModel)]="input" (ngModelChange)="inputChanged()">
     <button type="button" class="btn" (click)="send()">Send!</button>
     <button type="button" class="btn" (click)="complete()">Complete!</button>
   </div>

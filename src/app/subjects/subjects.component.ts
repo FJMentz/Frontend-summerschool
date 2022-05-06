@@ -65,4 +65,9 @@ export class SubjectsComponent {
     });
   }
 
+
+  // --------------- EXTRA -----------------
+  inputChanged() {
+    // console.log(this.input);
+  }
 }
