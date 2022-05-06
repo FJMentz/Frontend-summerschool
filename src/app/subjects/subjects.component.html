@@ -1,25 +1,30 @@
 <h1>Subjects!</h1>
 
 <div class="wrapper">
+
   <div class="subscriber">
     <h3>Subscriber A</h3>
     <button type="button" class="btn" (click)="subscribeA()">Subscribe</button>
     <app-logger [list]="listA"></app-logger>
   </div>
+
   <div class="subscriber">
     <h3>Subscriber B</h3>
     <button type="button" class="btn" (click)="subscribeB()">Subscribe</button>
     <app-logger [list]="listB"></app-logger>
   </div>
+
   <div class="subscriber">
     <h3>Subscriber C</h3>
     <button type="button" class="btn" (click)="subscribeC()">Subscribe</button>
     <app-logger [list]="listC"></app-logger>
   </div>
+
   <div class="broadcaster">
     <h3>Broadcaster</h3>
     <input type="text" [(ngModel)]="input">
     <button type="button" class="btn" (click)="send()">Send!</button>
     <button type="button" class="btn" (click)="complete()">Complete!</button>
   </div>
+
 </div>
