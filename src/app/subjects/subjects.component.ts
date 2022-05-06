@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Subject, Subscription} from 'rxjs';
+import {AsyncSubject, BehaviorSubject, ReplaySubject, Subject, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-subjects',
